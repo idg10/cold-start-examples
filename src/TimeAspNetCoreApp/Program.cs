@@ -40,18 +40,14 @@ async Task UseAndThenStop(string url)
 
     Console.WriteLine(sw.Elapsed);
 
-    // Sending Ctrl+C doesn't work...
-    //childProc.StandardInput.Write('\x3');
     childProc.StandardInput.WriteLine("");
 
-    //childProc.Kill(true);
     Console.WriteLine("Waiting for web app to shut down");
     await childProc.WaitForExitAsync();
     Console.WriteLine("Web app shut down");
     done.Set();
 }
 
-//await UseAndThenStop("http://localhost:5000/");
 
 childProc.OutputDataReceived += (_, e) =>
 {
@@ -65,9 +61,7 @@ childProc.OutputDataReceived += (_, e) =>
             string url = line[(p + match.Length)..];
             if (url.StartsWith("http:"))
             {
-                //Console.WriteLine($"URL: {url}");
                 _ = Task.Run(() => UseAndThenStop(url));
-
 
                 return;
             }
