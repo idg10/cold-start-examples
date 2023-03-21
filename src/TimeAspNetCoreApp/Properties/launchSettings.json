@@ -17,12 +17,12 @@
     },
     "GetBadgeJit": {
       "commandName": "Project",
-      "commandLineArgs": "ColdStart.AspNetCoreBasic.RenderImmBadges.exe",
+      "commandLineArgs": "ColdStart.AspNetCoreBasic.RenderImmBadges.exe /imm/github/corvus-dotnet/Corvus.Identity/total",
       "workingDirectory": "C:\\dev\\idg10\\cold-start-examples\\src\\ColdStart.AspNetCoreBasic.RenderImmBadges\\bin\\Release\\net6.0\\"
     },
     "GetBadge x64 R2R": {
       "commandName": "Project",
-      "commandLineArgs": "ColdStart.AspNetCoreBasic.RenderImmBadges.exe",
+      "commandLineArgs": "ColdStart.AspNetCoreBasic.RenderImmBadges.exe /imm/github/corvus-dotnet/Corvus.Identity/total",
       "workingDirectory": "C:\\dev\\idg10\\cold-start-examples\\src\\ColdStart.AspNetCoreBasic.RenderImmBadges\\bin\\Release\\net6.0\\win-x64\\publish\\"
     }
   }

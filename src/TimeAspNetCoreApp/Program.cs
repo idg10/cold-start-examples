@@ -1,6 +1,8 @@
 ﻿
 using System.Diagnostics;
 
+string testEndpoint = args.Length > 1 ? args[1] : "/";
+
 //string commandLine = "dotnet-trace collect --providers System.Net.Http,Endjin.StartupTests -- " + args[0];
 //string providers = "System.Net.Http,Endjin.StartupTests";
 //string providers = "Microsoft.AspNetCore";
@@ -18,19 +20,19 @@ Console.WriteLine("About to launch:");
 Thread.Sleep(2000);
 Stopwatch sw = Stopwatch.StartNew();
 Process childProc = Process.Start(psi)!;
-Console.WriteLine(sw.Elapsed);
+Console.WriteLine($"Process.Start took {sw.Elapsed}");
 ManualResetEventSlim done = new();
 
 async Task UseAndThenStop(string url)
 {
     var baseUrl = new Uri(url);
-    var endpointUrl = new Uri(baseUrl, "/imm/github/corvus-dotnet/Corvus.Identity/total");
+    var endpointUrl = new Uri(baseUrl, testEndpoint);
     try
     {
         using HttpClient http = new();
         HttpResponseMessage response = await http.GetAsync(endpointUrl);
         sw.Stop();
-        Console.WriteLine(response.StatusCode);
+        Console.WriteLine($"Response code: {response.StatusCode} ({(int)response.StatusCode})");
         //Console.WriteLine(await response.Content.ReadAsStringAsync());
     }
     catch (Exception x)
