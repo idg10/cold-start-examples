@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ColdStart.AzureFunctions.DoNothing.Isolated.Net70": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7101",
+      "launchBrowser": false
+    }
+  }
+}
