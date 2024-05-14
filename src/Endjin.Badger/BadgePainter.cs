@@ -26,8 +26,8 @@ public static class BadgePainter
             Dpi = 96
         };
 
-        var subjectWidth = TextMeasurer.Measure(WebUtility.HtmlDecode(subject), textOptions).Width + 8; //34.25086
-        var statusWidth = TextMeasurer.Measure(WebUtility.HtmlDecode(status), textOptions).Width + 8; // 42.3075
+        var subjectWidth = TextMeasurer.MeasureSize(WebUtility.HtmlDecode(subject), textOptions).Width + 8; //34.25086
+        var statusWidth = TextMeasurer.MeasureSize(WebUtility.HtmlDecode(status), textOptions).Width + 8; // 42.3075
 
         var result = string.Format(
             CultureInfo.InvariantCulture,
