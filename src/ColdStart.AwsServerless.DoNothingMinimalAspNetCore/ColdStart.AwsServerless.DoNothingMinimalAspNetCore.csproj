@@ -9,8 +9,12 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <!-- Generate ready to run images during publishing to improvement cold starts. -->
     <PublishReadyToRun>true</PublishReadyToRun>
+
+    <!--<DefineConstants>$(DefineConstants);AOT</DefineConstants>
+    <PublishAot>true</PublishAot>
+    <OutputType>Exe</OutputType>-->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.3.0" />
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.7.0" />
   </ItemGroup>
 </Project>

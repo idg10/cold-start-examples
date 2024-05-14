@@ -7,11 +7,24 @@
         "All the command line options for the Lambda command can be specified in this file."
     ],
     "profile"     : "default",
-    "region"      : "eu-west-1",
+    "region"      : "eu-north-1",
     "configuration" : "Release",
     "s3-prefix"     : "ColdStart.AwsServerless.DoNothingMinimalAspNetCore/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "idg10-awsexperiments",
-    "stack-name"          : "ColdStart-AwsServerless-DoNothingMinimalAspNetCore"
+    "s3-bucket"           : "intswawsexperiments",
+    "stack-name"          : "ColdStart-AwsServerless-DoNothingMinimalAspNetCore",
+    "framework"           : "net8.0",
+    "function-name"       : "DoNothingMinimalAspNetCore",
+    "package-type"        : "Zip",
+    "function-memory-size" : 128,
+    "function-role"        : "arn:aws:iam::894116030848:role/lambda_exec_DoNothingMinimalAspNetCore",
+    "function-timeout"     : 10,
+    "function-runtime"     : "dotnet8",
+    "function-architecture" : "x86_64",
+    "function-subnets"      : "",
+    "function-security-groups" : "",
+    "tracing-mode"             : "PassThrough",
+    "environment-variables"    : "",
+    "image-tag"                : ""
 }
