@@ -7,8 +7,27 @@
     <AWSProjectType>Lambda</AWSProjectType>
     <!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <!-- Generate ready to run images during publishing to improvement cold starts. -->
+    <!--
+    Generate ready to run images during publishing to improvement cold starts.
+    The AWS project templates add this for you.
+    -->
     <PublishReadyToRun>true</PublishReadyToRun>
+
+    <!--
+    When you use Native AOT, ASP.NET Core pushes some work to build time:
+    when we use a delegate of some kind other than RequestDelegate, it uses
+    a C# Code Generator to inspect the shape of it at build time, and
+    generates code enabling it to work with whatever shape of delegate we
+    supply without needing to use reflection at runtime. This minimizes the
+    difference between using RequestDelegate and application-specific handler
+    delegates.
+    For backwards compatibility, by default ASP.NET Core continues to use
+    reflection for these application-specific delegate types when you don't
+    use Native AOT.
+    However, this code generation has a useful performance benefit when
+    not using Native AOT, so you can enable it for non-Native-AOT projects.
+    -->
+    <!--<EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>-->
 
     <!--<DefineConstants>$(DefineConstants);AOT</DefineConstants>
     <PublishAot>true</PublishAot>
